@@ -9,7 +9,26 @@
 }
 
 body {
-  margin: 0.5rem 1rem;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  min-height: 100vh;
+  background-image: url('/contenedorstarbliz.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: -1;
 }
 
 header {
@@ -49,12 +68,23 @@ textarea {
   font-family: Menlo, Cascadia Code, Consolas, Liberation Mono, monospace;
 }
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 1rem;
+  margin-bottom: 120px;
+}
+
+#app {
+  margin-bottom: 0;
+}
+
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  height: 100%;
-  width: 100%;
+  margin-bottom: 1rem;
 }
 
 .wc {
@@ -75,4 +105,174 @@ textarea {
   color:#333;
   font-size: 80%;
   text-decoration: underline;
+}
+
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(135deg, rgba(0, 32, 63, 0.95), rgba(0, 82, 154, 0.95));
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+  box-shadow: 0 -2px 10px rgba(0, 40, 80, 0.2);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.company-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, #ffffff, #a8d8ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.company-description {
+  font-size: 1.1rem;
+  margin: 0.3rem 0;
+  font-weight: 500;
+  color: #f0f0f0;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  margin: 0.2rem 0 0;
+  opacity: 0.8;
+}
+
+/* Terminal styles */
+.terminal-container {
+  background: #1a1b26;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-header {
+  background: #1a1a1a;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #333;
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.terminal-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.terminal-button.close { background: #ff5f57; }
+.terminal-button.minimize { background: #ffbd2e; }
+.terminal-button.maximize { background: #28c841; }
+
+.terminal-title {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.terminal-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.clear-button {
+  background: transparent;
+  border: none;
+  color: #666;
+  padding: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.2s ease;
+}
+
+.clear-button:hover {
+  color: #fff;
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.terminal {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  background: #1a1b26;
+}
+
+.terminal-output {
+  margin-bottom: 12px;
+  color: #a9b1d6;
+}
+
+.terminal-welcome {
+  color: #7aa2f7;
+  margin-bottom: 8px;
+}
+
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  padding: 2px 0;
+}
+
+.prompt {
+  color: #7aa2f7;
+  margin-right: 8px;
+  user-select: none;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #a9b1d6;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+.terminal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal::-webkit-scrollbar-track {
+  background: #1a1b26;
+}
+
+.terminal::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+.terminal::-webkit-scrollbar-thumb:hover {
+  background: #444;
 }

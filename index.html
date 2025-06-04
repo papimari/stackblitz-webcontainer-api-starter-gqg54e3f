@@ -5,6 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/stackblitz-favicon-editor.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My first WebContainers app</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   </head>
   <body>
     <header>
@@ -15,7 +16,50 @@
         </a>
       </p>
     </header>
-    <div id="app"></div>
+    <main class="main-container">
+      <div id="app"></div>
+      <div class="terminal-container">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <span class="terminal-button close"></span>
+            <span class="terminal-button minimize"></span>
+            <span class="terminal-button maximize"></span>
+          </div>
+          <div class="terminal-title">Terminal</div>
+          <div class="terminal-actions">
+            <button class="clear-button" id="clearTerminal" title="Limpiar terminal">
+              <i class="fas fa-eraser"></i>
+            </button>
+          </div>
+        </div>
+        <div class="terminal" id="terminal">
+          <div class="terminal-output" id="terminalOutput">
+            <div class="terminal-welcome">
+              Welcome to WebContainer Terminal
+              Type 'help' for available commands
+            </div>
+          </div>
+          <div class="terminal-input-line">
+            <span class="prompt">user@webcontainer:~$</span>
+            <input type="text" class="terminal-input" id="terminalInput" autofocus spellcheck="false">
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p class="company-name">Papiweb</p>
+        <p class="company-description">Desarrollos Informáticos</p>
+        <a href="https://link.mercadopago.com.ar/papiweb" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="coffee-link">
+          <i class="fa-solid fa-mug-hot coffee-icon"></i>
+          <span>Invítanos un café</span>
+        </a>
+        <p class="copyright">&copy; 2025 Todos los derechos reservados</p>
+      </div>
+    </footer>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
