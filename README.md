@@ -1,4 +1,4 @@
-# Sistema de Gestión de Archivos con WebContainer API
+# Sistema de Gestión de Archivos con WebContainer API Papiweb
 
 Este proyecto implementa un sistema de gestión de archivos moderno utilizando WebContainer API, con una interfaz web interactiva y una terminal Linux integrada.
 
